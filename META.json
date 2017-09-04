@@ -1,12 +1,9 @@
 {
    "name": "count_distinct",
-   "abstract": "Aggregate for computing number of distinct values using a sorted set.",
-   "description": "The regular COUNT(DISTINCT ...) always performs a regular sort internally, which results in bad performance if there's a lot of duplicate values. This extension implements custom count_distinct aggregate function that uses an optimized sorted set to achieve the same purpose. The extension currently supports only data types passed by value",
-   "version": "2.0.0",
-   "maintainer": [
-      "Tomas Vondra <tv@fuzzy.cz>",
-      "Alexey Bashtanov <bashtanov@imap.cc>"
-   ],
+   "abstract": "Aggregate for computing number of distinct values using a hash table.",
+   "description": "The regular COUNT(DISTINCT ...) and ARRAY_AGG(DISTINCT ...) always perform a sort, which results in bad performance if there's a lot of duplicate values. This extension implements custom count_distinct and array_agg_distinct aggregate functions that can use hash-based aggregation algorithm to achieve the same purpose. So far only data types with lengths less than 8B are supported, but extending it to other data types should not be difficult.",
+   "version": "2.0.1",
+   "maintainer": "Tomas Vondra <tv@fuzzy.cz>",
    "license": "bsd",
    "prereqs": {
       "runtime": {
@@ -17,9 +14,9 @@
    },
    "provides": {
      "count_distinct": {
-       "file": "sql/count_distinct--2.0.0.sql",
+       "file": "sql/count_distinct--2.0.1.sql",
        "docfile" : "README.md",
-       "version": "2.0.0"
+       "version": "2.0.1"
      }
    },
    "resources": {
@@ -29,10 +26,10 @@
         "type": "git"
       }
    },
-   "tags" : ["count", "distinct", "aggregate"],
+   "tags" : ["count", "distinct", "aggregate", "array_agg"],
    "meta-spec": {
       "version": "1.0.0",
       "url": "http://pgxn.org/meta/spec.txt"
    },
-   "release_status" : "stable"
+   "release_status" : "testing"
 }
