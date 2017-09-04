@@ -1,0 +1,19 @@
+Source: count-distinct
+Section: database
+Priority: optional
+Maintainer: Ilya Peretyagin <ilya@brandwatch.com>
+Build-Depends: debhelper (>= 9), postgresql-server-dev-all (>= 180)
+Standards-Version: 3.9.8
+Homepage: https://github.com/BrandwatchLtd/count_distinct
+Vcs-Git: git@github.com:BrandwatchLtd/count_distinct.git
+Vcs-Browser: https://github.com/BrandwatchLtd/count_distinct
+
+Package: postgresql-count-distinct-9.4
+Architecture: any
+Depends: postgresql-9.4, ${shlibs:Depends}, ${misc:Depends}
+Description: COUNT_DISTINCT aggregate
+ This extension provides an alternative to COUNT(DISTINCT ...) which
+ for large amounts of data often ends in sorting and poor performance.
+ .
+ This package contains the server extension for PostgreSQL 9.4.
+
