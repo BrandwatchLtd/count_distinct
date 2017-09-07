@@ -17,7 +17,7 @@ node ('docker') {
     dir ("${WORKSPACE}")
     {
         stage ('Upload to repository') {
-            sh 'for deb in postgresql-count-distinct*.deb; do for dest in http://apt.service0.btn1.bwcom.net/packages http://apt.service0.btn1.bwcom.net/packages; do curl -u "aptly:ohV9oxo3at5leeMoh2ahNiochahpaive" $dest -F "my_file=@${deb}" -F "name=${deb}"; done; done';
+            sh 'for deb in postgresql-count-distinct*.deb; do for dest in http://apt.service0.btn1.bwcom.net/packages https://aptly.stage.brandwatch.net/packages; do curl -u "aptly:ohV9oxo3at5leeMoh2ahNiochahpaive" $dest -F "my_file=@${deb}" -F "name=${deb}"; done; done';
         }
         stage ('Cleanup') {
             cleanWs();
