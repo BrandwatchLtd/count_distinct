@@ -1,3 +1,9 @@
+count-distinct (1:2.0.1-1) unstable; urgency=medium
+
+  * Switch to new versioning
+
+ -- Ilya Peretyagin <ilya@brandwatch.com>  Fri, 22 Sep 2017 11:38:47 +0100
+
 count-distinct (2.0.1-1) unstable; urgency=medium
 
   * Updated extension to 2.0.1
