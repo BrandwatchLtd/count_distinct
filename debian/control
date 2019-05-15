@@ -17,3 +17,12 @@ Description: COUNT_DISTINCT aggregate
  .
  This package contains the server extension for PostgreSQL 9.6.
 
+Package: postgresql-count-distinct-10
+Architecture: any
+Depends: postgresql-10, ${shlibs:Depends}, ${misc:Depends}
+Description: COUNT_DISTINCT aggregate
+ This extension provides an alternative to COUNT(DISTINCT ...) which
+ for large amounts of data often ends in sorting and poor performance.
+ .
+ This package contains the server extension for PostgreSQL 10.
+
