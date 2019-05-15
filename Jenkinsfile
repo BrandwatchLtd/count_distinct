@@ -28,7 +28,6 @@ node ('docker') {
     {
         stage ('Upload to repositories') {
             if (params.publish) {
-            if (params.publish) {
                 [
                     'http://apt.service0.btn1.bwcom.net/publish'
                 ].each { aptly_uploader_url ->
