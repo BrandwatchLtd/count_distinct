@@ -21,7 +21,7 @@ node ('docker') {
         }
     }
     stage ('Build debian packages') {
-        sh "docker run -v $WORKSPACE:/mnt --rm ${img.id} dpkg-buildpackage -b";
+        sh "docker run -v $WORKSPACE:/mnt --rm ${img.id} CC=aarch64-linux-gnu-gcc CONFIG_SITE=/etc/dpkg-cross/cross-config.arm64 DEB_BUILD_OPTIONS=nocheck dpkg-buildpackage -aarm64 -Pcross,nocheck -b"
         sh "ls ${WORKSPACE}; ls ${WORKSPACE}/";
     }
     dir ("${WORKSPACE}")

@@ -3,6 +3,9 @@
 # output every command that modifies files on the build system.
 #export DH_VERBOSE = 1
 
+# TODO: set CC in Makefile based on one of these
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/buildflags.mk
 
 # see FEATURE AREAS in dpkg-buildflags(1)
 #export DEB_BUILD_MAINT_OPTIONS = hardening=+all
@@ -22,6 +25,9 @@ override_dh_auto_install:
 
 override_dh_installdocs:
 	dh_installdocs --all README.md LICENSE
+
+override_dh_auto_clean:
+	+pg_buildext clean postgresql-count-distinct-%v
 
 %:
 	dh $@
