@@ -1,9 +1,3 @@
-count-distinct (1:3.0.2-3) unstable; urgency=medium
-
-  * Build in Debian 10 for backward compatibility
-
- -- Robert Cardell <robert.cardell@brandwatch.com>  Thu, 7 Dec 2023 16:10:00 +0000
-
 count-distinct (1:3.0.2-2) unstable; urgency=medium
 
   * Build against more PostgreSQL versions
