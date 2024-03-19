@@ -1,3 +1,9 @@
+count-distinct (1:3.0.2-3) unstable; urgency=low
+
+  * Build against Postgres 16 too
+
+ -- Robert Cardell <robert.cardell@brandwatch.com>  Tue, 19 Mar 2024 15:00:00 +0000
+
 count-distinct (1:3.0.2-2) unstable; urgency=medium
 
   * Build against more PostgreSQL versions
